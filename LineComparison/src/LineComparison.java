@@ -1,5 +1,6 @@
 import java.util.Objects;
 import java.util.Scanner;
+
 public class LineComparison {
     //Constants
     static Double x1, x2, y1, y2, p1, p2, q1, q2;
@@ -11,13 +12,19 @@ public class LineComparison {
         LineComparison.lineLengthTwo();
         LineComparison.difference();
     }
-    public static void difference(){
+        // Functions of the programme
+    public static void difference() {
         if ((Objects.equals(lineLength(), lineLengthTwo()))) {
-            System.out.println("The Length are equal");
-        } else {
-            System.out.println("The length are not Equal");
+            if (lineLength() > lineLengthTwo()) {
+                System.out.println("The line 1 is Greater then the Line 2 ");
+            } else if (lineLengthTwo() > lineLength()) {
+                System.out.println("The line 2 is Greater then the Line 1 ");
+            } else {
+                System.out.println("The Length are equal");
+            }
         }
     }
+
     //Enter the distance values
     public static void EnterDistance() {
         System.out.println("Enter the Values of the following");
@@ -40,10 +47,12 @@ public class LineComparison {
         System.out.println("q2");
         q2 = Double.valueOf(scan.next());
     }
+
     //finding the length of the line
     public static double lineLength() {
         return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
     }
+
     //finding the length 2nd time
     public static Double lineLengthTwo() {
         return (Math.sqrt((p2 - p1) * (p2 - p1) + (q2 - q1) * (q2 - q1)));
